@@ -2,6 +2,12 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Section_Head from './SectionHead.jsx';
 import Section_Text_Module from './SectionTextModule.jsx';
+import styled from 'styled-components';
+import Navigation from './Navigation.jsx';
+
+const Wrapper = styled.div`
+	background-color: #123456;
+`;
 
 export default class Work_Section extends Component {
   constructor(props){
@@ -9,7 +15,7 @@ export default class Work_Section extends Component {
   }
   render () {
     return (
-      <div className="section_content">
+      <Wrapper className="section_content">
         <Section_Head 
           name="Work Experience"
         />
@@ -22,7 +28,8 @@ export default class Work_Section extends Component {
         <Section_Text_Module 
           copy="etc."
         />
-      </div>
+	<Navigation />
+      </Wrapper>
     )
   }
 };
