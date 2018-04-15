@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-import { Home, List } from './components/App';
+import { Home, Section, Academics_Section } from './components/App';
 import './index.less';
 //import BackgroundImage from './components/BackgroundImage';
 
@@ -12,7 +12,7 @@ ReactDOM.render(
   <Router>
       <div>
         <Route exact path="/" component={Home} />
-        <Route path="/list" component={List} />
+        <Route path="/academics" component={Academics_Section} />
       </div>
   </Router>,
   document.getElementById('app')
