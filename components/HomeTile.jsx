@@ -2,21 +2,24 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-const Wrapper = styled.p`
+const Wrapper = styled.div`
+	{
+		width: 200px;
+		height: 100px;
+		background-color: red;
+	}
 	&:hover{
-		color: #676767;
+		background-color: yellow;
 	}
 `;
 
-export default class Section_Text_Module extends Component {
+export default class HomeTile extends Component {
   constructor(props){
     super(props);
   }
   render () {
     return (
-      <div className="section_text_module">
         <Wrapper>{this.props.copy}</Wrapper>
-      </div>
     )
   }
 };
