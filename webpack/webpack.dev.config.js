@@ -15,8 +15,10 @@ module.exports = {
             },{
                 test: /\.less$/,
                 loaders: ["style-loader", "css-loader", "less-loader"]
-            }
-        ]
+            },{
+		test: /\.(png|jpg)$/,
+		loader: 'url-loader?limit=8192'
+	}]
     },
     output: {
         path: parentDir + '/dist',

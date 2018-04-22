@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import HomeTile from './HomeTile.jsx';
+
+var leisureImg = require('../img/leisure.jpg');
+var skillsImg = require('../img/skills.jpg');
 
 const Wrapper = styled.div`
   position:relative;
@@ -19,34 +21,76 @@ const Wrapper = styled.div`
   }
 `;
 
-const WorkTile = styled.a`
+const WorkTile = styled.div`
   grid-column: 3/6;
   grid-row: 1;
-  background-color: #b27572;
-`;
-
-const SkillsTile = styled.a`
-  grid-column: 1/4;
-  grid-row: 1/3;
   background-color: #6d5b97;
+  position: relative;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  justify-content: flex-end;
+  span{
+    align-self: flex-end;
+  }
 `;
 
-const EducationTile = styled.a`
+const SkillsTile = styled.div`
+  grid-column: 1/5;
+  grid-row: 1/3;
+  background-image: url(${skillsImg});
+  background-attachment: fixed;
+  position: relative;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  justify-content: flex-end;
+  span{
+    align-self: flex-end;
+  }
+`;
+
+const EducationTile = styled.div`
   grid-column: 1/6;
   grid-row: 2/4;
-  background-color: #d3a29b;
+  background-color: #c37572;
+  position: relative;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  justify-content: flex-end;
+  span{
+    align-self: flex-end;
+  }
 `;
 
-const OrgaTile = styled.a`
+const OrgaTile = styled.div`
   grid-column: 1/3;
   grid-row: 4/5;
-  background-color: #ce88a2;
+  background-color: #d3a29b;
+  position: relative;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  justify-content: flex-end;
+  span{
+    align-self: flex-end;
+  }
 `;
 
-const LeisureTile = styled.a`
+const LeisureTile = styled.div`
   grid-column: 1/6;
   grid-row: 1/5;
-  background-color: #e3bda8;
+  background-image: url(${leisureImg});
+  background-attachment: fixed;
+  position: relative;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  justify-content: flex-end;
+  span{
+    align-self: flex-end;
+  }
 `;
 
 const WorkLink = WorkTile.withComponent(Link);
@@ -60,21 +104,21 @@ export default class Home extends Component {
     return (
     <div className="home">
       <Wrapper>
-        <h1>This is Agathe.</h1>
+        <h1>Agathe Lelong.</h1>
         <LeisureLink to="/leisure">
-          Leisure
+          <span>HOBBIES</span>
         </LeisureLink>
         <OrgaLink to="/organizations">
-          Organizations
+          <span>ORGANIZATIONS</span>
         </OrgaLink>
         <EducationLink to="/education">
-          Education
+          <span>EDUCATION</span>
         </EducationLink>
         <SkillsLink to="/skills">
-            Skills
+            <span>SKILLS</span>
         </SkillsLink>
         <WorkLink to="/work">
-          Work Experience
+          <span>WORK EXPERIENCE</span>  
         </WorkLink>
       </Wrapper>
     </div>        
