@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+//import WorkBanner from './WorkBanner.jsx';
 
 var leisureImg = require('../img/sand.jpg');
 var aboutImg = require('../img/Agathe_Lelong.jpg')
@@ -34,9 +35,9 @@ const WorkTile = styled.div`
     align-self: flex-end;
   }
   transition: all 2s ease-in-out;
-  -webkit-transition: all 2s ease-in-out; /** Chrome & Safari **/
-  -moz-transition: all 2s ease-in-out; /** Firefox **/
-  -o-transition: all 2s ease-in-out; /** Opera **/
+  -webkit-transition: all 2s ease-in-out;
+  -moz-transition: all 2s ease-in-out;
+  -o-transition: all 2s ease-in-out;
 `;
 
 const AboutTile = styled.div`
