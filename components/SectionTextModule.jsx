@@ -2,51 +2,48 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-const Wrapper = styled.p`
-  &:hover{
-      color: #676767;
-  }
+const Wrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: center;
 `;
 
 export default class Section_Text_Module extends Component {
   constructor(props){
     super(props);
     this.state = {
-      isHidden: true
+      TitleIsHidden: false,
+      DetailsAreHidden: true
     }
     this.toggleHidden = this.toggleHidden.bind(this);
   }
 
   toggleHidden () {
     this.setState({
-      isHidden: !this.state.isHidden
+      TitleIsHidden: !this.state.TitleIsHidden,
+      DetailsAreHidden: !this.state.DetailsAreHidden
     })
   }
+
   render () {
     return (
       <div className="section_text_module" onClick={this.toggleHidden}>
-        <Wrapper>{this.props.title}</Wrapper>
-        {!this.state.isHidden && 
-          <div>
-            {this.props.children}
-          </div>
-        }
+        <Wrapper>
+            {!this.state.TitleIsHidden && 
+            <h2>
+              {this.props.title}
+            </h2>
+            }
+            {!this.state.DetailsAreHidden && 
+              <div>
+                {this.props.children}
+              </div>
+            }
+        </Wrapper>
       </div>
     )
   }
 };
-
-//const Content = (props) => <div>{props.children}</div>
-
-/*export class Content extends Component {
-  constructor(props){
-    super(props)
-  }
-  render(){
-    return(
-      <div className='content'>
-        <p>{this.props.content}</p>
-      </div>
-    )
-  }
-};*/

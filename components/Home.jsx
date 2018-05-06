@@ -4,7 +4,7 @@ import styled from 'styled-components';
 //import WorkBanner from './WorkBanner.jsx';
 
 var leisureImg = require('../img/sand.jpg');
-var aboutImg = require('../img/Agathe_Lelong.jpg')
+var aboutImg = require('../img/Agathe_Lelong.jpg');
 
 const Wrapper = styled.div`
   position:relative;
@@ -13,6 +13,7 @@ const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 2fr 2fr 1fr 1fr 1fr 5fr;
   grid-template-rows: 8fr 1fr 6fr 3fr 7fr;
+  font-size: 24px;
   @media only screen 
     and (min-device-width: 375px) 
     and (max-device-width: 667px) 
@@ -28,7 +29,7 @@ const WorkTile = styled.div`
   background-color: #6d5b97;
   position: relative;
   color: white;
-  font-weight: bold;
+  font-size:24px;
   display: flex;
   justify-content: flex-end;
   span{
@@ -49,7 +50,6 @@ const AboutTile = styled.div`
   background-repeat: no-repeat;
   position: relative;
   color: white;
-  font-weight: bold;
   display: flex;
   justify-content: flex-start;
   span{
@@ -58,12 +58,11 @@ const AboutTile = styled.div`
 `;
 
 const SkillsTile = styled.div`
-  grid-column: 1/5;
+  grid-column: 1/6;
   grid-row: 2/5;
   background-color: #d3a29b;
   position: relative;
   color: white;
-  font-weight: bold;
   display: flex;
   justify-content: flex-start;
   span{
@@ -72,12 +71,11 @@ const SkillsTile = styled.div`
 `;
 
 const EducationTile = styled.div`
-  grid-column: 5/7;
+  grid-column: 6/7;
   grid-row: 2/5;
   background-color: #c37572;
   position: relative;
   color: white;
-  font-weight: bold;
   display: flex;
   justify-content: flex-end;
   span{
@@ -86,12 +84,11 @@ const EducationTile = styled.div`
 `;
 
 const OrgaTile = styled.div`
-  grid-column: 1/6;
+  grid-column: 1/5;
   grid-row: 5/6;
   background-color: #ce88a2;
   position: relative;
   color: white;
-  font-weight: bold;
   display: flex;
   justify-content: flex-start;
   span{
@@ -100,7 +97,7 @@ const OrgaTile = styled.div`
 `;
 
 const LeisureTile = styled.div`
-  grid-column: 3/7;
+  grid-column: 5/7;
   grid-row: 5/6;
   background-image: url(${leisureImg});
   background-attachment: fixed;
@@ -108,7 +105,6 @@ const LeisureTile = styled.div`
   background-size: cover;
   position: relative;
   color: white;
-  font-weight: bold;
   display: flex;
   justify-content: flex-end;
   span{
@@ -144,8 +140,8 @@ export default class Home extends Component {
           <span>About</span>  
         </AboutLink>
         <WorkLink to="/work">
+          <h1>Agathe Lelong</h1>
           <span>Work Experience</span>
-          <h1>Agathe Lelong.</h1>
         </WorkLink>
       </Wrapper>
     </div>        
