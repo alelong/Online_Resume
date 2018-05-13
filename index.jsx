@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import Home from './components/Home.jsx';
 import Work_Section from './components/Work.jsx';
+import About_Section from './components/About.jsx';
 import Skills_Section from './components/Skills.jsx';
 import Education_Section from './components/Education.jsx';
 import Organizations_Section from './components/Organizations.jsx';
@@ -16,6 +17,7 @@ ReactDOM.render(
       <div>
         <Route exact path="/" component={Home} />
         <Route path="/work" component={Work_Section} />
+        <Route path="/about" component={About_Section} />
         <Route path="/skills" component={Skills_Section} />
         <Route path="/education" component={Education_Section} />
         <Route path="/organizations" component={Organizations_Section} />

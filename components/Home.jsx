@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-//import WorkBanner from './WorkBanner.jsx';
 
 var leisureImg = require('../img/sand.jpg');
 var aboutImg = require('../img/Agathe_Lelong.jpg');

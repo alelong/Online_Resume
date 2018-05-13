@@ -8,7 +8,6 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  text-align: center;
 `;
 
 export default class Section_Text_Module extends Component {
@@ -30,8 +29,8 @@ export default class Section_Text_Module extends Component {
 
   render () {
     return (
-      <div className="section_text_module" onClick={this.toggleHidden}>
-        <Wrapper>
+      //<div className="section_text_module" onClick={this.toggleHidden}>
+        <Wrapper onClick={this.toggleHidden}>
             {!this.state.TitleIsHidden && 
             <h2>
               {this.props.title}
@@ -43,7 +42,7 @@ export default class Section_Text_Module extends Component {
               </div>
             }
         </Wrapper>
-      </div>
+      //</div>
     )
   }
 };

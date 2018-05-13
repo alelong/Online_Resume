@@ -7,6 +7,7 @@ export default class Navigation extends Component {
       <div className="navigation">
           <Link to="/"><button>Home</button></Link>
           <Link to="/work"><button>Work Experience</button></Link>
+          <Link to="/about"><button>About</button></Link>
           <Link to="/skills"><button>Skills</button></Link>
           <Link to="/education"><button>Education</button></Link>
           <Link to="/organizations"><button>Organizations</button></Link>
