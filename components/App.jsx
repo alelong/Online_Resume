@@ -1,175 +1,119 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import ReactDOM from 'react-dom';
+import { withRouter, Switch, Route, Redirect, Link } from 'react-router-dom';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
+import {Wrapper, Tile7} from './Skeleton.jsx';
+import {WorkTile1, WorkTile2, WorkTile3, WorkTile4, WorkTile5, WorkTile6} from './WorkTiles.jsx';
+import {LeisureTile1, LeisureTile2, LeisureTile3, LeisureTile4, LeisureTile5, LeisureTile6} from './LeisureTiles.jsx';
+import {HomeTile1, HomeTile2, HomeTile3, HomeTile4, HomeTile5, HomeTile6} from './HomeTiles.jsx';
+import {OrganizationsTile1, OrganizationsTile2, OrganizationsTile3, OrganizationsTile4, OrganizationsTile5, OrganizationsTile6} from './OrganizationsTiles.jsx';
+import {EducationTile1, EducationTile2, EducationTile3, EducationTile4, EducationTile5, EducationTile6} from './EducationTiles.jsx';
+import {SkillsTile1, SkillsTile2, SkillsTile3, SkillsTile4, SkillsTile5, SkillsTile6} from './SkillsTiles.jsx';
+import {AboutTile1, AboutTile2, AboutTile3, AboutTile4, AboutTile5, AboutTile6} from './AboutTiles.jsx';
+import LeftNavigation from './LeftNavigation.jsx';
+import RightNavigation from './RightNavigation.jsx';
+import './../index.less';
 
-class Home extends Component {
-  render () {
-    return (
-      <div className="home">
-        <h1>This is Agathe.</h1>
-          <Link to="/work"><button>Work Experience</button></Link>
-          <Link to="/skills"><button>Skills</button></Link>
-          <Link to="/education"><button>Education</button></Link>
-          <Link to="/organizations"><button>Organizations</button></Link>
-          <Link to="/leisure"><button>Leisure</button></Link>
-      </div>        
-    )
-  }
+const App = ({ location }) => {
+  const timeout = {enter: 1000, exit: 1000};
+  return(
+    <div>
+      <LeftNavigation/>
+      <Wrapper>
+        <TransitionGroup component={null}>
+          <CSSTransition key={location.key} timeout={timeout} classNames="slideDown">
+            <Switch location={location}>
+              <Route exact path="/" component={HomeTile6} />
+              <Route path="/home" component={HomeTile6} />
+              <Route path="/work" component={WorkTile6} />
+              <Route path="/about" component={AboutTile6} />
+              <Route path="/skills" component={SkillsTile6} />
+              <Route path="/education" component={EducationTile6} />
+              <Route path="/organizations" component={OrganizationsTile6} />
+              <Route path="/leisure" component={LeisureTile6} />
+              <Route render={() => <div>Not Found</div>} />
+            </Switch>
+          </CSSTransition>
+        </TransitionGroup>
+        <TransitionGroup component={null}>
+            <CSSTransition key={location.key} timeout={timeout} classNames="slideLeft">
+              <Switch location={location}>
+                <Route exact path="/" component={HomeTile5} />
+                <Route path="/home" component={HomeTile5} />
+                <Route path="/work" component={WorkTile5} />
+                <Route path="/about" component={AboutTile5} />
+                <Route path="/skills" component={SkillsTile5} />
+                <Route path="/education" component={EducationTile5} />
+                <Route path="/organizations" component={OrganizationsTile5} />
+                <Route path="/leisure" component={LeisureTile5} />
+                <Route render={() => <div>Not Found</div>} />
+              </Switch>
+            </CSSTransition>
+          </TransitionGroup>
+        <TransitionGroup component={null}>
+          <CSSTransition key={location.key} timeout={timeout} classNames="slideRight">
+            <Switch location={location}>
+              <Route exact path="/" component={HomeTile4} />
+              <Route path="/home" component={HomeTile4} />
+              <Route path="/work" component={WorkTile4} />
+              <Route path="/about" component={AboutTile4} />
+              <Route path="/skills" component={SkillsTile4} />
+              <Route path="/education" component={EducationTile4} />
+              <Route path="/organizations" component={OrganizationsTile4} />
+              <Route path="/leisure" component={LeisureTile4} />
+              <Route render={() => <div>Not Found</div>} />
+            </Switch>
+          </CSSTransition>
+        </TransitionGroup>
+        <TransitionGroup component={null}>
+          <CSSTransition key={location.key} timeout={timeout} classNames="slideLeft">
+            <Switch location={location}>
+              <Route exact path="/" component={HomeTile3} />
+              <Route path="/home" component={HomeTile3} />
+              <Route path="/work" component={WorkTile3} />
+              <Route path="/about" component={AboutTile3} />
+              <Route path="/skills" component={SkillsTile3} />
+              <Route path="/education" component={EducationTile3} />
+              <Route path="/organizations" component={OrganizationsTile3} />
+              <Route path="/leisure" component={LeisureTile3} />
+              <Route render={() => <div>Not Found</div>} />
+            </Switch>
+          </CSSTransition>
+        </TransitionGroup>
+        <TransitionGroup component={null}>
+          <CSSTransition key={location.key} timeout={timeout} classNames="slideUp">
+            <Switch location={location}>
+              <Route exact path="/" component={HomeTile2} />
+              <Route path="/home" component={HomeTile2} />
+              <Route path="/work" component={WorkTile2} />
+              <Route path="/about" component={AboutTile2} />
+              <Route path="/skills" component={SkillsTile2} />
+              <Route path="/education" component={EducationTile2} />
+              <Route path="/organizations" component={OrganizationsTile2} />
+              <Route path="/leisure" component={LeisureTile2} />
+              <Route render={() => <div>Not Found</div>} />
+            </Switch>
+          </CSSTransition>
+        </TransitionGroup>
+        <TransitionGroup component={null}>
+          <CSSTransition key={location.key} timeout={timeout} classNames="slideRight">
+            <Switch location={location}>
+              <Route exact path="/" component={HomeTile1} />
+              <Route path="/home" component={HomeTile1} />
+              <Route path="/work" component={WorkTile1} />
+              <Route path="/about" component={AboutTile1} />
+              <Route path="/skills" component={SkillsTile1} />
+              <Route path="/education" component={EducationTile1} />
+              <Route path="/organizations" component={OrganizationsTile1} />
+              <Route path="/leisure" component={LeisureTile1} />
+              <Route render={() => <div>Not Found</div>} />
+            </Switch>
+          </CSSTransition>
+        </TransitionGroup>
+      </Wrapper>
+      <RightNavigation/>
+    </div>
+  )
 };
 
-class Section_Head extends Component {
-  constructor(props){
-    super(props);
-  }
-  render () {
-    return (
-      <div className="section_head">
-        <h1>{this.props.name}</h1>
-        <Link to="/"><button>Back Home</button></Link>
-      </div>
-    )
-  }
-};
-
-class Section_Text_Module extends Component {
-  constructor(props){
-    super(props);
-  }
-  render () {
-    return (
-      <div className="section_text_module">
-        <p>{this.props.copy}</p>
-      </div>
-    )
-  }
-};
-
-class Work_Section extends Component {
-  constructor(props){
-    super(props);
-  }
-  render () {
-    return (
-      <div className="section_content">
-        <Section_Head 
-          name="Work Experience"
-        />
-        <Section_Text_Module 
-          copy="This will be Work Experience #1"
-        />
-        <Section_Text_Module 
-          copy="This will be Work Experience #2"
-        />
-        <Section_Text_Module 
-          copy="etc."
-        />
-      </div>
-    )
-  }
-};
-
-class Skills_Section extends Component {
-  constructor(props){
-    super(props);
-  }
-  render () {
-    return (
-      <div className="section_content">
-        <Section_Head
-          name="Skills"
-        />
-        <Section_Text_Module 
-          copy="This will be Skill #1"
-        />
-        <Section_Text_Module 
-          copy="This will be Skill #2"
-        />
-        <Section_Text_Module 
-          copy="etc."
-        />
-      </div>
-    )
-  }
-};
-
-class Education_Section extends Component {
-  constructor(props){
-    super(props);
-  }
-  render () {
-    return (
-      <div className="section_content">
-        <Section_Head 
-          name="Education"
-        />
-        <Section_Text_Module 
-          copy="This will be School #1"
-        />
-        <Section_Text_Module 
-          copy="This will be School #2"
-        />
-        <Section_Text_Module 
-          copy="etc."
-        />
-      </div>
-    )
-  }
-};
-
-class Organizations_Section extends Component {
-  constructor(props){
-    super(props);
-  }
-  render () {
-    return (
-      <div className="section_content">
-        <Section_Head 
-          name="Organizations"
-        />
-        <Section_Text_Module 
-          copy="This will be Orga #1"
-        />
-        <Section_Text_Module 
-          copy="This will be Orga #2"
-        />
-        <Section_Text_Module 
-          copy="etc."
-        />
-      </div>
-    )
-  }
-};
-
-class Leisure_Section extends Component {
-  constructor(props){
-    super(props);
-  }
-  render () {
-    return (
-      <div className="section_content">
-        <Section_Head 
-          name="Leisure"
-        />
-        <Section_Text_Module 
-          copy="This will be Hobby #1"
-        />
-        <Section_Text_Module 
-          copy="This will be Hobby #2"
-        />
-        <Section_Text_Module 
-          copy="etc."
-        />
-      </div>
-    )
-  }
-};
-
-module.exports = {
-  Home,
-  Section_Head,
-  Section_Text_Module,
-  Work_Section,
-  Skills_Section,
-  Education_Section,
-  Organizations_Section,
-  Leisure_Section
-};
+export default withRouter(App);

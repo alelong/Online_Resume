@@ -8,6 +8,21 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  text-align: center;
+`;
+
+const Title = styled.h2`
+  opacity: ${props => props.hidden ? '0' : '1'};
+  visibility: visible;
+  display: block;
+  transition: opacity 0.5s;
+`;
+
+const Details = styled.div`
+  opacity: ${props => props.hidden ? '0' : '1'};
+  visibility: visible;
+  display: block;
+  transition: opacity 0.5s;
 `;
 
 export default class Section_Text_Module extends Component {
@@ -29,20 +44,14 @@ export default class Section_Text_Module extends Component {
 
   render () {
     return (
-      //<div className="section_text_module" onClick={this.toggleHidden}>
         <Wrapper onClick={this.toggleHidden}>
-            {!this.state.TitleIsHidden && 
-            <h2>
-              {this.props.title}
-            </h2>
-            }
-            {!this.state.DetailsAreHidden && 
-              <div>
-                {this.props.children}
-              </div>
-            }
+          <Title hidden={this.state.TitleIsHidden}>
+            {this.props.title}
+          </Title>
+          <Details hidden={this.state.DetailsAreHidden}>
+            {this.props.children}
+          </Details>
         </Wrapper>
-      //</div>
     )
   }
 };
