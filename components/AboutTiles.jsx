@@ -18,7 +18,9 @@ var EmailIcon = require('../img/emailIcon.png');
 const AboutTile1Container = styled(Tile1)`
   color: white;
   background-image: url(${aboutNavImg});
-  border: none;
+  border-color: ${sectionColor};
+  border-style: solid;
+  border-width: 1px;
   `;
 
 const AboutTile2Container = styled(Tile2)`
