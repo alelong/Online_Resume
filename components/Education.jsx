@@ -4,34 +4,35 @@ import Section_Text_Module from './SectionTextModule.jsx';
 import {Wrapper, Tile1, Tile2, Tile3, Tile4, Tile5, Tile6} from './Skeleton.jsx';
 import styled from 'styled-components';
 import Typing from 'react-typing-animation';
+var sectionColor = '#c37572';
 //IMPORT statement to insert in App.jsx below:
 //import {EducationTile1, EducationTile2, EducationTile3, EducationTile4, EducationTile5, EducationTile6} from './EducationTiles.jsx';
 
 const EducationTile1Container = styled(Tile1)`
-  color: #c37572;
+  color: ${sectionColor};
   `;
 
 const EducationTile2Container = styled(Tile2)`
-  color: #c37572;
+  color: ${sectionColor};
   `;
 
 const EducationTile3Container = styled(Tile3)`
   background-color: #c37572;
-  color: #c37572;
+  color: ${sectionColor};
   `;
 
 const EducationTile4Container = styled(Tile4)`
-  background-color: #c37572;
+  background-color: ${sectionColor};
   color: white;
   border: 0;
   `;
 
 const EducationTile5Container = styled(Tile5)`
-  color: #c37572;
+  color: ${sectionColor};
   `;
 
 const EducationTile6Container = styled(Tile6)`
-  color: #c37572;
+  color: ${sectionColor};
   `;
 
 const TypedTile = () => (

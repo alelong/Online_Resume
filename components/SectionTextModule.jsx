@@ -12,14 +12,16 @@ const Wrapper = styled.div`
 `;
 
 const Title = styled.h2`
-  opacity: ${props => props.hidden ? '0' : '1'};
+  // opacity: ${props => props.hidden ? '0' : '1'}; 
+  opacity: 1;
   visibility: visible;
   display: block;
   transition: opacity 0.5s;
 `;
 
 const Details = styled.div`
-  opacity: ${props => props.hidden ? '0' : '1'};
+  //opacity: ${props => props.hidden ? '0' : '1'};
+  opacity: 1;
   visibility: visible;
   display: block;
   transition: opacity 0.5s;

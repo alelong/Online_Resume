@@ -7,6 +7,7 @@ import Typing from 'react-typing-animation';
 //IMPORT statement to insert in App.jsx below:
 //import {AboutTile1, AboutTile2, AboutTile3, AboutTile4, AboutTile5, AboutTile6} from './AboutTiles.jsx';
 
+//Images import
 var aboutImg = require('../img/Agathe_Lelong.jpg');
 var aboutNavImg = require('../img/About_Navigation.jpg');
 var sectionColor = '#283045';
@@ -14,6 +15,8 @@ var LinkedInLogo = require('../img/In-White-101px-R.png');
 var InstagramLogo = require('../img/InstagramLogo.png');
 var EmailIcon = require('../img/emailIcon.png');
 
+//EN Copy
+import { Hello_msg, Title_4, Title_5, Title_6, Paragraph_4, Paragraph_5, Paragraph_6, EmailIcon_alt, LinkedInIcon_alt, InstagramIcon_alt } from '../copy/CopyFile_About.jsx';
 
 const AboutTile1Container = styled(Tile1)`
   color: white;
@@ -51,7 +54,7 @@ const AboutTile6Container = styled(Tile6)`
 
 const TypedTile = () => (
     <Typing speed={50}>
-      <span>Bonjour!</span>
+      <span>{Hello_msg}</span>
     </Typing>
   )
 
@@ -66,13 +69,13 @@ export class AboutTile1 extends Component {
     return (
       <AboutTile1Container style={{flexDirection: 'row'}}>
         <a href="mailto:agathelelong@orange.fr" target="_top">
-          <img src={EmailIcon} alt="Email me" style={{width: '105px', paddingRight: '26px'}}/>
+          <img src={EmailIcon} alt={EmailIcon_alt} style={{width: '105px', paddingRight: '26px'}}/>
         </a>
         <a href="https://www.linkedin.com/in/agathelelong/" target="_blank">
-          <img src={LinkedInLogo} alt="My LinkedIn profile" style={{width: '50px', paddingRight: '12px'}}/>
+          <img src={LinkedInLogo} alt={LinkedInIcon_alt} style={{width: '50px', paddingRight: '12px'}}/>
         </a>
         <a href="https://www.instagram.com/agathellg/" target="_blank">
-          <img src={InstagramLogo} alt="My Instagram account" style={{width: '92px'}}/>
+          <img src={InstagramLogo} alt={InstagramIcon_alt} style={{width: '92px'}}/>
         </a>
       </AboutTile1Container>
     )
@@ -110,8 +113,8 @@ export class AboutTile4 extends Component {
   render () {
     return (
       <AboutTile4Container>
-        <Section_Text_Module title="Wannabee Web Developer">
-          <p>This is my online resume and React.js playground</p>
+        <Section_Text_Module title={Title_4}>
+          <p>{Paragraph_4}</p>
         </Section_Text_Module>
       </AboutTile4Container>
     )
@@ -125,8 +128,8 @@ export class AboutTile5 extends Component {
   render () {
     return (
       <AboutTile5Container>
-        <Section_Text_Module title="ID">
-          <p>Born and raised in Brittany, France ; born in 1992</p>
+        <Section_Text_Module title={Title_5}>
+          <p>{Paragraph_5}</p>
         </Section_Text_Module>
       </AboutTile5Container>
     )
@@ -140,8 +143,8 @@ export class AboutTile6 extends Component {
   render () {
     return (
       <AboutTile6Container>
-        <Section_Text_Module title="Current occupation">
-          <p>E-Commerce Consultant at Amaris Consulting</p>
+        <Section_Text_Module title={Title_6}>
+          <p>{Paragraph_6}</p>
         </Section_Text_Module>
       </AboutTile6Container>
     )
