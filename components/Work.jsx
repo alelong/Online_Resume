@@ -4,7 +4,8 @@ import Section_Text_Module from './SectionTextModule.jsx';
 import {Wrapper, Tile1, Tile2, Tile3, Tile4, Tile5, Tile6} from './Skeleton.jsx';
 import styled from 'styled-components';
 import Typing from 'react-typing-animation';
-var sectionColor = '#6d5b97';
+
+export const sectionColor = '#6d5b97';
 
 //EN Copy
 import { 
@@ -34,7 +35,7 @@ import {
   Achievement1_6, 
   Achievement2_6,
   Achievement3_6,
-} from '../copy/CopyFile_Work.jsx';
+} from '../copy/Work_Copy.jsx';
 
 const WorkTile1Container = styled(Tile1)`
   background-color: ${sectionColor};

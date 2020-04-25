@@ -7,23 +7,32 @@ import Typing from 'react-typing-animation';
 //IMPORT statement to insert in App.jsx below:
 //import {AboutTile1, AboutTile2, AboutTile3, AboutTile4, AboutTile5, AboutTile6} from './AboutTiles.jsx';
 
+export const sectionColor = '#111c2f';
+
 //Images import
 var aboutImg = require('../img/Agathe_Lelong.jpg');
 var aboutNavImg = require('../img/About_Navigation.jpg');
-var sectionColor = '#283045';
 var LinkedInLogo = require('../img/In-White-101px-R.png');
 var InstagramLogo = require('../img/InstagramLogo.png');
 var EmailIcon = require('../img/emailIcon.png');
 
 //EN Copy
-import { Hello_msg, Title_4, Title_5, Title_6, Paragraph_4, Paragraph_5, Paragraph_6, EmailIcon_alt, LinkedInIcon_alt, InstagramIcon_alt } from '../copy/CopyFile_About.jsx';
+import { 
+  Hello_msg, 
+  Title_4, 
+  Title_5, 
+  Title_6, 
+  Paragraph_4, 
+  Paragraph_5, 
+  Paragraph_6, 
+  EmailIcon_alt, 
+  LinkedInIcon_alt, 
+  InstagramIcon_alt 
+} from '../copy/About_Copy.jsx';
 
 const AboutTile1Container = styled(Tile1)`
-  color: white;
-  background-image: url(${aboutNavImg});
-  border-color: ${sectionColor};
-  border-style: solid;
-  border-width: 1px;
+  color: ${sectionColor};
+  background-color: ${sectionColor};
   `;
 
 const AboutTile2Container = styled(Tile2)`
@@ -31,13 +40,15 @@ const AboutTile2Container = styled(Tile2)`
   background-attachment: fixed;
   background-repeat: no-repeat;
   color: white;
+
   border: none;
 `;
 
 const AboutTile3Container = styled(Tile3)`
   color: ${sectionColor};
   background-image: url(${aboutNavImg});
-  border-top: none;
+  background-attachment: fixed;
+  background-size: contain;
   `;
 
 const AboutTile4Container = styled(Tile4)`

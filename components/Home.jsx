@@ -9,8 +9,15 @@ import Typing from 'react-typing-animation';
 var leisureImg = require('../img/sand.jpg');
 var aboutImg = require('../img/Agathe_Lelong.jpg');
 
+import { sectionColor as sectionColor_About } from './About.jsx';
+import { sectionColor as sectionColor_Work } from './Work.jsx';
+import { sectionColor as sectionColor_Skills } from './Skills.jsx';
+import { sectionColor as sectionColor_Education } from './Education.jsx';
+import { sectionColor as sectionColor_Organizations } from './Organizations.jsx';
+import { sectionColor as sectionColor_Leisure } from './Leisure.jsx';
+
 const HomeTile1Container = Tile1.withComponent(Link).extend`
-  background-color: #6d5b97;
+  background-color: ${sectionColor_Work};
   border: none;
   color: white;
   `;
@@ -32,20 +39,20 @@ const HomeTile2Container = Tile2.withComponent(Link).extend`
   `;
 
 const HomeTile3Container = Tile3.withComponent(Link).extend`
-  background-color: #d3a29b;
+  background-color: ${sectionColor_Skills};
   border: none;
   color: white;
   cursor: pointer;
   `;
 
 const HomeTile4Container = Tile4.withComponent(Link).extend`
-  background-color: #c37572;
+  background-color: ${sectionColor_Education};
   border: none;
   color: white;
   `;
 
 const HomeTile5Container = Tile5.withComponent(Link).extend`
-  background-color: #ce88a2;
+  background-color: ${sectionColor_Organizations};
   border: none;
   color: white;
   `;
@@ -62,7 +69,7 @@ const HomeTile6Container = Tile6.withComponent(Link).extend`
 const AboutTypedTile = () => (
     <Typing speed={100}>
       <Typing.Delay ms={500}/>
-        <span>Bonjour!</span>
+        <span>Oh hi!</span>
     </Typing>
   )
 
@@ -97,7 +104,7 @@ const ClubsTypedTile = () => (
 const LeisureTypedTile = () => (
     <Typing speed={100}>
       <Typing.Delay ms={3000}/>
-        <span>Hobbies</span>
+        <span><mark style={{backgroundColor: 'white', color: '#513E4D'}}>Airplane mode ON</mark></span>
     </Typing>
   )
 

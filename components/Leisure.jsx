@@ -7,26 +7,48 @@ import Typing from 'react-typing-animation';
 
 var leisureImg = require('../img/sand.jpg');
 var leisureNavImg = require('../img/Leisure_Navigation.jpg');
+export const textColor = '#513E4D';
+
+export const sectionColor = '#cdb092';
+
+//EN Copy
+import { 
+  Title_1, 
+  Title_2, 
+  Title_3,
+  Title_4, 
+  Title_5, 
+  Title_6,
+  Paragraph_1, 
+  Paragraph_2, 
+  Paragraph_3,
+  Paragraph_4, 
+  Paragraph_5, 
+  Paragraph_6,
+} from '../copy/Leisure_Copy.jsx';
 
 const LeisureTile1Container = styled(Tile1)`
-  color: #cdb092;
+  color: ${sectionColor};
   `;
 
 const LeisureTile2Container = styled(Tile2)`
-  color: #cdb092;
+  color: ${sectionColor};
   `;
 
 const LeisureTile3Container = styled(Tile3)`
-  color: #cdb092;
-  background-image: url(${leisureNavImg});
+  color: ${sectionColor};
+  background-image: url(${leisureImg});
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
   `;
 
 const LeisureTile4Container = styled(Tile4)`
-  color: #cdb092;
+  color: ${sectionColor};
   `;
 
 const LeisureTile5Container = styled(Tile5)`
-  color: #cdb092;
+  color: ${sectionColor};
   `;
 
 const LeisureTile6Container = styled(Tile6)`
@@ -34,14 +56,14 @@ const LeisureTile6Container = styled(Tile6)`
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  border: 0;
-  color: #513E4D;
+  border: none;
+  color: ${textColor};
   `;
 
 const TypedTile = () => (
   <Typing speed={50}>
-    <h1>My hobbies.</h1>
-    <span>From the court to the beach!</span>
+    <h1><mark style={{backgroundColor: 'white', color: '#513E4D'}}>{Title_6}</mark></h1>
+    <span><mark style={{backgroundColor: 'white', color: '#513E4D'}}>{Paragraph_6}</mark></span>
   </Typing>
 ) 
 
@@ -55,8 +77,8 @@ export class LeisureTile1 extends Component {
   render () {
     return (
       <LeisureTile1Container>
-        <Section_Text_Module title="Volleyball">
-          <p>Player, Zogsports League</p>
+        <Section_Text_Module title={Title_1}>
+          <p>{Paragraph_1}</p>
         </Section_Text_Module>
       </LeisureTile1Container>
     )
@@ -70,8 +92,8 @@ export class LeisureTile2 extends Component {
   render () {
     return (
       <LeisureTile2Container>
-        <Section_Text_Module title="Surfing">
-          <p>Waves and Sea addict</p>
+        <Section_Text_Module title={Title_2}>
+          <p>{Paragraph_2}</p>
         </Section_Text_Module>
       </LeisureTile2Container>
     )
@@ -96,8 +118,8 @@ export class LeisureTile4 extends Component {
   render () {
     return (
       <LeisureTile4Container>
-        <Section_Text_Module title="Tennis">
-          <p>Former competitor</p>
+        <Section_Text_Module title={Title_4}>
+          <p>{Paragraph_4}</p>
         </Section_Text_Module>
       </LeisureTile4Container>
     )
@@ -111,8 +133,8 @@ export class LeisureTile5 extends Component {
   render () {
     return (
       <LeisureTile5Container>
-        <Section_Text_Module title="Drawing and Painting">
-          <p>"Artiste du dimanche"</p>
+        <Section_Text_Module title={Title_5}>
+          <p>{Paragraph_5}</p>
         </Section_Text_Module>
       </LeisureTile5Container>
     )

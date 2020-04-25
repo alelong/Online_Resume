@@ -1,7 +1,7 @@
 //EN COPY FOR WORK PAGE
 
-export const Title_1 = "My work experiences";
-export const Paragraph_1 = "From Digital Marketing and e-commerce project management... to web development!";
+export const Title_1 = "#Work";
+export const Paragraph_1 = "Helping brands build digital, e-commerce and mobile experiences...";
 
 export const Title_2 = "Digital Transformation Consultant";
 export const Workplace_2 = "Capgemini, Brest, France";

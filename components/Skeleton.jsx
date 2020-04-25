@@ -4,14 +4,17 @@ import styled from 'styled-components';
 import Navigation from './Navigation.jsx';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
+export const bodyWidth = '88%' ;
+var borderStyle = 'solid 3px';
+
 export const Wrapper = styled.div`
   position:relative;
-  width: 90%;
+  width: ${bodyWidth};
   height: 100%;
   display: grid;
   grid-template-columns: 2fr 2fr 1fr 1fr 1fr 5fr;
   grid-template-rows: 8fr 1fr 6fr 3fr 6fr 1fr;
-  font-family: "Georgia", serif;
+  font-family: "Courier New", serif;
   cursor: pointer;
   div {
     display: flex;
@@ -56,66 +59,66 @@ export const Wrapper = styled.div`
 export const Tile1 = styled.div`
   grid-column: 4/7;
   grid-row: 1;
-  border: 1px solid;
-  border-collapse: collapse;
   background-color: white;
   position: relative;
-  border-left: none;
-  border-bottom: none;
+  
+  border-bottom: ${borderStyle};
+  //border-top-left-radius: 30px;
 `;
 
 export const Tile2 = styled.div`
   grid-column: 1/4;
   grid-row: 1/4;
-  border: 1px solid;
-  border-collapse: collapse;
   background-color: white;
   position: relative;
+  
+  border-right: ${borderStyle};
+  //border-bottom-right-radius: 15px;
 `;
 
 export const Tile3 = styled.div`
   grid-column: 1/6;
   grid-row: 2/5;
-  border: 1px solid;
-  border-collapse: collapse;
   background-color: white;
   position: relative;
-  border-bottom: none;
   justify-content: flex-end;
   cursor: auto;
   span, h1 {
     position: absolute;
     bottom: 10%;
   }
+  
+  border: none;
 `;
 
 export const Tile4 = styled.div`
   grid-column: 6/7;
   grid-row: 2/5;
-  border: 1px solid;
-  border-collapse: collapse;
   background-color: white;
   position: relative;
-  border-left: none;
-  border-bottom: none;
+  
+  border:none;
 `;
 
 export const Tile5 = styled.div`
   grid-column: 1/5;
   grid-row: 5/7;
-  border: 1px solid;
-  border-collapse: collapse;
   background-color: white;
   position: relative;
-  border-right: none;
+  
+  border-top: ${borderStyle};
+  //border-bottom-right-radius: 30px;
 `;
 
 export const Tile6 = styled.div`
   grid-column: 5/7;
   grid-row: 5/7;
-  border: 1px solid;
-  border-collapse: collapse;
   background-color: white;
   position: relative;
+  
+  border: ${borderStyle};
+  border-right:none;
+  border-bottom:none;
+  //border-top-right-radius: 30px;
 `;
 

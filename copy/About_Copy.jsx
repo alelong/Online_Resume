@@ -1,6 +1,6 @@
 //EN COPY FOR ABOUT PAGE
 
-export const Hello_msg = "Bonjour!";
+export const Hello_msg = "Oh hi!";
 export const Title_4 = "A website, what for?";
 export const Title_5 = "ID";
 export const Title_6 = "Occupation";
