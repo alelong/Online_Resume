@@ -8,8 +8,8 @@ import Typing from 'react-typing-animation';
 var leisureImg = require('../img/sand.jpg');
 var leisureNavImg = require('../img/Leisure_Navigation.jpg');
 export const textColor = '#513E4D';
-
-export const sectionColor = '#cdb092';
+export const sectionColor = '#513E4D';
+//export const sectionColor = '#cdb092';
 
 //EN Copy
 import { 
@@ -56,8 +56,9 @@ const LeisureTile6Container = styled(Tile6)`
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  border: none;
   color: ${textColor};
+  //background-color: ${sectionColor};
+  border: none;
   `;
 
 const TypedTile = () => (

@@ -8,6 +8,7 @@ import Typing from 'react-typing-animation';
 //import {OrganizationsTile1, OrganizationsTile2, OrganizationsTile3, OrganizationsTile4, OrganizationsTile5, OrganizationsTile6} from './OrganizationsTiles.jsx';
 
 export const sectionColor = '#ce88a2';
+//export const sectionColor = '#6d5b97';
 
 //EN Copy
 import { 

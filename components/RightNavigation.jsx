@@ -13,17 +13,6 @@ import { sectionColor as sectionColor_Work } from './Work.jsx';
 import { sectionColor as sectionColor_Education } from './Education.jsx';
 import { sectionColor as sectionColor_Leisure, textColor } from './Leisure.jsx';
 
-const NavigationContainer = styled.div`
-  display: grid;
-  grid-template-rows: 8fr 1fr 6fr 3fr 7fr;
-  width: ${navBarWidth};
-  height: 100%;
-  z-index: 1;
-  font-family: "Courier New", serif;
-  font-size: 20px;
-  position: relative;
-`;
-
 const WorkLink = styled(Link)`
   grid-row: 1;
   background-color: ${sectionColor_Work};
@@ -31,7 +20,9 @@ const WorkLink = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
-  text-decoration: none;
+  text-decoration: overline;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
 `;
 
 const EducationLink = styled(Link)`
@@ -41,7 +32,9 @@ const EducationLink = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
-  text-decoration: none;
+  text-decoration: overline;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
 `;
 
 const LeisureLink = styled(Link)`
@@ -51,20 +44,22 @@ const LeisureLink = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
-  text-decoration: none;
+  text-decoration: overline;
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
 `;
 
-export default class LeftNavigation extends Component {
+export default class RightNavigation extends Component {
   render () {
     return (
-      <NavigationContainer>
-          <WorkLink to="/work">WORK</WorkLink>
-          <EducationLink to="/education">EDU</EducationLink>
-          <LeisureLink to="/leisure"><mark>FUN<br/>icon</mark></LeisureLink>
-      </NavigationContainer>        
+      <React.Fragment>
+        <WorkLink to={this.props.toWork}>WORK</WorkLink>
+        <EducationLink to={this.props.toEducation}>EDUCATION</EducationLink>
+        <LeisureLink to={this.props.toLeisure}><mark style={{backgroundColor: 'white', color: '#513E4D'}}>OFFLINE</mark></LeisureLink>
+      </React.Fragment>        
     )
   }
 };

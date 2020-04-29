@@ -2,7 +2,7 @@
 
 export const Title_1 = "French";
 export const Title_2 = "English";
-export const Title_3 = "#Languages";
+export const Title_3 = "#Languages (to code and to speak)";
 export const Title_4 = "Spanish";
 export const Title_5 = "Frontend web languages";
 export const Title_6 = "Bringing all of that together";

@@ -20,8 +20,9 @@ const NavigationContainer = styled.div`
   height: 100%;
   z-index: 1;
   font-family: "Courier New", serif;
-  font-size: 20px;
+  font-size: 15px;
   position: relative;
+
 `;
 
 const HomeLink = styled(Link)`
@@ -33,6 +34,7 @@ const HomeLink = styled(Link)`
   top: 0;
   width: 100%;
   height: 7%;
+  justify-content: center;
 `;
 
 const AboutLink = styled(Link)`
@@ -42,7 +44,8 @@ const AboutLink = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
-  text-decoration: none;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
 `;
 
 const SkillsLink = styled(Link)`
@@ -52,7 +55,8 @@ const SkillsLink = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
-  text-decoration: none;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
 `;
 
 const OrgaLink = styled(Link)`
@@ -62,7 +66,8 @@ const OrgaLink = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
-  text-decoration: none;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
 `;
 
 export default class LeftNavigation extends Component {
@@ -70,7 +75,7 @@ export default class LeftNavigation extends Component {
     return (
       <NavigationContainer>
           <AboutLink to="/about">ABOUT</AboutLink>
-          <SkillsLink to="/skills">SKILLS</SkillsLink>
+          <SkillsLink to="/skills">LANG</SkillsLink>
           <OrgaLink to="/organizations">CLUBS</OrgaLink>
           <HomeLink to="/"/>
       </NavigationContainer>        

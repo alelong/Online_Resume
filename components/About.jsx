@@ -36,12 +36,12 @@ const AboutTile1Container = styled(Tile1)`
   `;
 
 const AboutTile2Container = styled(Tile2)`
-  background-image: url(${aboutImg});
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  color: white;
-
-  border: none;
+  //background-image: url(${aboutImg});
+  //background-attachment: fixed;
+  //background-repeat: no-repeat;
+  //color: white;
+  //border: none;
+  color: ${sectionColor};
 `;
 
 const AboutTile3Container = styled(Tile3)`

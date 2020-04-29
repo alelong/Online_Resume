@@ -4,6 +4,7 @@ import Section_Text_Module from './SectionTextModule.jsx';
 import {Wrapper, Tile1, Tile2, Tile3, Tile4, Tile5, Tile6} from './Skeleton.jsx';
 import styled from 'styled-components';
 import Typing from 'react-typing-animation';
+
 //import statement to insert in App.jsx: import {HomeTile1, HomeTile2, HomeTile3, HomeTile4, HomeTile5, HomeTile6} from './HomeTiles.jsx';
 
 var leisureImg = require('../img/sand.jpg');
@@ -16,6 +17,17 @@ import { sectionColor as sectionColor_Education } from './Education.jsx';
 import { sectionColor as sectionColor_Organizations } from './Organizations.jsx';
 import { sectionColor as sectionColor_Leisure } from './Leisure.jsx';
 
+//Copy import based on currentLang
+import {
+  Title_1,
+  Title_2,
+  Title_3,
+  Title_4,
+  Title_5,
+  Title_6
+} from '../copy/Home_Copy.jsx';
+
+
 const HomeTile1Container = Tile1.withComponent(Link).extend`
   background-color: ${sectionColor_Work};
   border: none;
@@ -23,11 +35,13 @@ const HomeTile1Container = Tile1.withComponent(Link).extend`
   `;
 
 const HomeTile2Container = Tile2.withComponent(Link).extend`
-  background-image: url(${aboutImg});
+  background-color: ${sectionColor_About};
+  color: white;
+  border: none;
+  /*background-image: url(${aboutImg});
   background-attachment: fixed;
   background-repeat: no-repeat;
-  border: none;
-  color: white;
+  color: ${sectionColor_About};*/
   @media only screen 
     and (min-device-width: 375px) 
     and (max-device-width: 667px) 
@@ -69,42 +83,42 @@ const HomeTile6Container = Tile6.withComponent(Link).extend`
 const AboutTypedTile = () => (
     <Typing speed={100}>
       <Typing.Delay ms={500}/>
-        <span>Oh hi!</span>
+        <span>{Title_2}</span>
     </Typing>
   )
 
 const WorkTypedTile = () => (
     <Typing speed={100}>
       <Typing.Delay ms={1000}/>
-        <span>Work</span>
+        <span>{Title_1}</span>
     </Typing>
   )
 
 const SkillsTypedTile = () => (
     <Typing speed={100}>
       <Typing.Delay ms={1500}/>
-        <span>Skills</span>
+        <span>{Title_3}</span>
     </Typing>
   )
 
 const EducationTypedTile = () => (
     <Typing speed={100}>
       <Typing.Delay ms={2000}/>
-        <span>Education</span>
+        <span>{Title_4}</span>
     </Typing>
   )
 
 const ClubsTypedTile = () => (
     <Typing speed={100}>
       <Typing.Delay ms={2500}/>
-        <span>Clubs</span>
+        <span>{Title_5}</span>
     </Typing>
   )
 
 const LeisureTypedTile = () => (
     <Typing speed={100}>
       <Typing.Delay ms={3000}/>
-        <span><mark style={{backgroundColor: 'white', color: '#513E4D'}}>Airplane mode ON</mark></span>
+        <span><mark style={{backgroundColor: 'white', color: '#513E4D'}}>{Title_6}</mark></span>
     </Typing>
   )
 

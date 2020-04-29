@@ -8,6 +8,7 @@ import Typing from 'react-typing-animation';
 //import {EducationTile1, EducationTile2, EducationTile3, EducationTile4, EducationTile5, EducationTile6} from './EducationTiles.jsx';
 
 export const sectionColor = '#c37572';
+//export const sectionColor = '#111c2f';
 
 //EN Copy
 import { 

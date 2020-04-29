@@ -5,7 +5,8 @@ import {Wrapper, Tile1, Tile2, Tile3, Tile4, Tile5, Tile6} from './Skeleton.jsx'
 import styled from 'styled-components';
 import Typing from 'react-typing-animation';
 
-export const sectionColor = '#d3a29b';
+//export const sectionColor = '#d3a29b';
+export const sectionColor = '#513E4D';
 
 //EN Copy
 import { 

@@ -5,7 +5,7 @@ import Navigation from './Navigation.jsx';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 export const bodyWidth = '88%' ;
-var borderStyle = 'solid 3px';
+var borderStyle = 'solid 2px';
 
 export const Wrapper = styled.div`
   position:relative;
@@ -57,7 +57,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Tile1 = styled.div`
-  grid-column: 4/7;
+  grid-column: 5/7;
   grid-row: 1;
   background-color: white;
   position: relative;
@@ -67,13 +67,13 @@ export const Tile1 = styled.div`
 `;
 
 export const Tile2 = styled.div`
-  grid-column: 1/4;
+  grid-column: 1/5;
   grid-row: 1/4;
   background-color: white;
   position: relative;
   
   border-right: ${borderStyle};
-  //border-bottom-right-radius: 15px;
+  border-bottom: ${borderStyle};
 `;
 
 export const Tile3 = styled.div`
@@ -98,6 +98,7 @@ export const Tile4 = styled.div`
   position: relative;
   
   border:none;
+  border-left: ${borderStyle};
 `;
 
 export const Tile5 = styled.div`
