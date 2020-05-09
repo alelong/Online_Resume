@@ -7,6 +7,7 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group';
 export const bodyWidth = '88%' ;
 var borderStyle = 'solid 2px';
 
+
 export const Wrapper = styled.div`
   position:relative;
   width: ${bodyWidth};
@@ -48,11 +49,10 @@ export const Wrapper = styled.div`
     and (max-device-width: 667px) 
     and (-webkit-min-device-pixel-ratio: 2)
     and (orientation: portrait) {
-      height:150vh;
+      height:100vh;
       span, h1, div > h2 {
-        font-size: 90px;
+        font-size: 70px;
       }
-
   }
 `;
 
@@ -61,8 +61,8 @@ export const Tile1 = styled.div`
   grid-row: 1;
   background-color: white;
   position: relative;
-  
   border-bottom: ${borderStyle};
+  border-top: ${borderStyle};
   //border-top-left-radius: 30px;
 `;
 
@@ -71,9 +71,9 @@ export const Tile2 = styled.div`
   grid-row: 1/4;
   background-color: white;
   position: relative;
-  
   border-right: ${borderStyle};
-  border-bottom: ${borderStyle};
+  border-bottom: none;
+  border-top: ${borderStyle};
 `;
 
 export const Tile3 = styled.div`
@@ -96,9 +96,9 @@ export const Tile4 = styled.div`
   grid-row: 2/5;
   background-color: white;
   position: relative;
-  
   border:none;
   border-left: ${borderStyle};
+  border-bottom: ${borderStyle};
 `;
 
 export const Tile5 = styled.div`
@@ -107,7 +107,7 @@ export const Tile5 = styled.div`
   background-color: white;
   position: relative;
   
-  border-top: ${borderStyle};
+  //border-top: ${borderStyle};
   //border-bottom-right-radius: 30px;
 `;
 
@@ -120,6 +120,6 @@ export const Tile6 = styled.div`
   border: ${borderStyle};
   border-right:none;
   border-bottom:none;
+  border-top: none;
   //border-top-right-radius: 30px;
 `;
-

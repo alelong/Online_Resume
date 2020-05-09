@@ -4,10 +4,10 @@ html, body, #app, #app > div {
   margin: 0;
 }
 
-#app > div {
+/*#app > div {
   display: flex;
   flex-direction: row;
-}
+}*/
 
 .home h1 {
 	font-size: 48px;
@@ -23,6 +23,31 @@ html, body, #app, #app > div {
 	font-size: 18px;
 }
 
+.scrollArrow {
+  width: 8%;
+  height: 4%;
+  background-image: url(./img/scroll_arrow.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: fixed;
+  top: 88%;
+  left: 46%;
+  animation-name: scrollArrow;
+  animation-duration: 2s;
+  transition: 0.5s;
+}
+
+@keyframes scrollArrow {
+  0% {top: 88%;}
+  25% {top: 85%;}
+  50% {top: 88%;}
+  75% {top: 85%;}
+  100% {top: 88%;}
+}
+
+
+
 .slideRight-enter {
   //transform: translate(100%);
 }
@@ -32,10 +57,25 @@ html, body, #app, #app > div {
 }
 .slideRight-leave {
   transform: translate(0%);
+  @media only screen 
+    and (min-device-width: 375px) 
+    and (max-device-width: 667px) 
+    and (-webkit-min-device-pixel-ratio: 2)
+    and (orientation: portrait) {
+      transform: none;
+      }
 }
 .slideRight-exit.slideRight-exit-active {
   transform: translate(110%);
   transition: transform 1000ms ease-in-out;
+  @media only screen 
+    and (min-device-width: 375px) 
+    and (max-device-width: 667px) 
+    and (-webkit-min-device-pixel-ratio: 2)
+    and (orientation: portrait) {
+      transform: none;
+      transition: none;
+      }
 }
 
 .slideLeft-enter {
@@ -47,10 +87,25 @@ html, body, #app, #app > div {
 }
 .slideLeft-exit {
   transform: translate(0%);
+  @media only screen 
+    and (min-device-width: 375px) 
+    and (max-device-width: 667px) 
+    and (-webkit-min-device-pixel-ratio: 2)
+    and (orientation: portrait) {
+      transform: none;
+      }
 }
 .slideLeft-exit.slideLeft-exit-active {
   transform: translate(-110%);
   transition: transform 1000ms ease-in-out;
+  @media only screen 
+    and (min-device-width: 375px) 
+    and (max-device-width: 667px) 
+    and (-webkit-min-device-pixel-ratio: 2)
+    and (orientation: portrait) {
+      transform: none;
+      transition: none;
+      }
 }
 
 .slideUp-enter {
@@ -62,10 +117,25 @@ html, body, #app, #app > div {
 }
 .slideUp-exit {
   transform: translateY(0%);
+  @media only screen 
+    and (min-device-width: 375px) 
+    and (max-device-width: 667px) 
+    and (-webkit-min-device-pixel-ratio: 2)
+    and (orientation: portrait) {
+      transform: none;
+      }
 }
 .slideUp-exit.slideUp-exit-active {
   transform: translateY(-110%);
   transition: transform 1000ms ease-in-out;
+  @media only screen 
+    and (min-device-width: 375px) 
+    and (max-device-width: 667px) 
+    and (-webkit-min-device-pixel-ratio: 2)
+    and (orientation: portrait) {
+      transform: none;
+      transition: none;
+      }
 }
 
 .slideDown-enter {
@@ -77,8 +147,23 @@ html, body, #app, #app > div {
 }
 .slideDown-exit {
   transform: translateY(0%);
+  @media only screen 
+    and (min-device-width: 375px) 
+    and (max-device-width: 667px) 
+    and (-webkit-min-device-pixel-ratio: 2)
+    and (orientation: portrait) {
+      transform: none;
+      }
 }
 .slideDown-exit.slideDown-exit-active {
   transform: translateY(110%);
   transition: transform 1000ms ease-in-out;
+  @media only screen 
+    and (min-device-width: 375px) 
+    and (max-device-width: 667px) 
+    and (-webkit-min-device-pixel-ratio: 2)
+    and (orientation: portrait) {
+      transform: none;
+      transition: none;
+      }
 }

@@ -3,11 +3,12 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 //var aboutNavImg = require('../img/About_NavigationBar.jpg');
-var homepageImg = require('../img/homepage_icon.png');
+//var homepageImg = require('../img/homepage_icon.png');
 
 //TODO: dynamically calculate width of nav bar given bodyWidth (tried on 4/25 but failed)
 import bodyWidth from './Skeleton.jsx';
-var navBarWidth = '6%';
+export const navBarWidth = '6%';
+var borderStyle = 'solid 2px';
 
 import { sectionColor as sectionColor_About } from './About.jsx';
 import { sectionColor as sectionColor_Skills } from './Skills.jsx';
@@ -22,19 +23,6 @@ const NavigationContainer = styled.div`
   font-family: "Courier New", serif;
   font-size: 15px;
   position: relative;
-
-`;
-
-const HomeLink = styled(Link)`
-  background-image: url(${homepageImg});
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 7%;
-  justify-content: center;
 `;
 
 const AboutLink = styled(Link)`
@@ -46,6 +34,8 @@ const AboutLink = styled(Link)`
   align-items: center;
   writing-mode: vertical-rl;
   text-orientation: upright;
+  //border-bottom: ${borderStyle};
+  //border-right: ${borderStyle};
 `;
 
 const SkillsLink = styled(Link)`
@@ -57,6 +47,7 @@ const SkillsLink = styled(Link)`
   align-items: center;
   writing-mode: vertical-rl;
   text-orientation: upright;
+  //border-right: ${borderStyle};
 `;
 
 const OrgaLink = styled(Link)`
@@ -68,17 +59,22 @@ const OrgaLink = styled(Link)`
   align-items: center;
   writing-mode: vertical-rl;
   text-orientation: upright;
+  //border-top: ${borderStyle};
+  //border-right: ${borderStyle};
 `;
 
 export default class LeftNavigation extends Component {
   render () {
+    let lang = this.props.copyLang;
+    let aboutSectionTitle = (lang == 'FR') ? 'À PROPOS' : 'ABOUT' ;
+    let skillsSectionTitle = (lang == 'FR') ? 'LANG' : 'LANG';
+    let clubsSectionTitle = (lang == 'FR') ? 'CLUBS' : 'CLUBS';
     return (
       <NavigationContainer>
-          <AboutLink to="/about">ABOUT</AboutLink>
-          <SkillsLink to="/skills">LANG</SkillsLink>
-          <OrgaLink to="/organizations">CLUBS</OrgaLink>
-          <HomeLink to="/"/>
-      </NavigationContainer>        
+        <AboutLink to={this.props.link_one}>{aboutSectionTitle}</AboutLink>
+        <SkillsLink to={this.props.link_two}>{skillsSectionTitle}</SkillsLink>
+        <OrgaLink to={this.props.link_three}>{clubsSectionTitle}</OrgaLink>
+      </NavigationContainer>
     )
   }
 };

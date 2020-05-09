@@ -5,8 +5,7 @@ import {Wrapper, Tile1, Tile2, Tile3, Tile4, Tile5, Tile6} from './Skeleton.jsx'
 import styled from 'styled-components';
 import Typing from 'react-typing-animation';
 
-var leisureImg = require('../img/sand.jpg');
-var leisureNavImg = require('../img/Leisure_Navigation.jpg');
+
 export const textColor = '#513E4D';
 export const sectionColor = '#513E4D';
 //export const sectionColor = '#cdb092';
@@ -37,7 +36,7 @@ const LeisureTile2Container = styled(Tile2)`
 
 const LeisureTile3Container = styled(Tile3)`
   color: ${sectionColor};
-  background-image: url(${leisureImg});
+  background-image: url(../img/sand.jpg);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
@@ -52,7 +51,7 @@ const LeisureTile5Container = styled(Tile5)`
   `;
 
 const LeisureTile6Container = styled(Tile6)`
-  background-image: url(${leisureImg});
+  background-image: url(../img/sand.jpg);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;

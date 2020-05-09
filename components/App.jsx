@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { withRouter, Switch, Route, Redirect, Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
+import Header from './Header.jsx';
 import {Wrapper, Tile7} from './Skeleton.jsx';
 import {WorkTile1, WorkTile2, WorkTile3, WorkTile4, WorkTile5, WorkTile6} from './Work.jsx';
 import {LeisureTile1, LeisureTile2, LeisureTile3, LeisureTile4, LeisureTile5, LeisureTile6} from './Leisure.jsx';
@@ -14,6 +15,49 @@ import {AboutTile1, AboutTile2, AboutTile3, AboutTile4, AboutTile5, AboutTile6} 
 import LeftNavigation from './LeftNavigation.jsx';
 import RightNavigation from './RightNavigation.jsx';
 import './../index.less';
+
+const color = '#111c2f';
+
+//Test copy import
+//import Home_Title_2 from '../copy/Home_Copy.jsx';
+
+const HeaderContainer = styled.div`
+  width: 100%;
+  height: 8%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white ;
+  color: ${color} ;
+  font-family: "Courier New", serif;
+  font-size: 36px;
+  //border-bottom: solid 2px;
+  z-index: 1;
+  position: relative;
+`;
+
+const FooterContainer = styled.div`
+  width: 100%;
+  height: 8%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: white ;
+  color: ${color} ;
+  font-family: "Courier New", serif;
+  font-size: 36px;
+  border-top: double 5px;
+  z-index: 1;
+  position: relative;
+`;
+
+const Body = styled.div`
+  display: flex;
+  flex-direction: row;
+  height: 120%;
+`;
 
 const RightBarContainer = styled.div`
   display: grid;
@@ -35,16 +79,26 @@ const LanguageSwitcherWrapper = styled.div`
   color: white;
 `;
 
-const LanguageItem = styled.div`
-  color: ${props => props.selected ? '#6d5b97' : 'white'}; 
-  background-color: ${props => props.selected ? 'white' : '#6d5b97'};
+const LanguageSwitcherWrapper_Header = styled.div`
+  width: 6%;
+  display: flex;
+  justify-content: space-evenly;
+  color: ${color};
+  font-size: 20px;
+`;
+
+const LanguageItem = styled(Link)`
+  color: ${props => props.selected ? 'white' : color}; 
+  background-color: ${props => props.selected ? color : 'white'};
   cursor:  pointer;
   visibility: visible;
   transition: opacity 0.5s;
+  text-decoration: none;
 `;
 
-const en_links = ['/en/home', '/en/work', '/en/about', '/en/skills', '/en/education', '/en/clubs', '/en/leisure'];
-const fr_links = ['/fr/accueil', '/fr/travail', '/fr/a-propos', '/fr/competences', '/fr/scolarite', '/fr/clubs', '/fr/loisirs'];
+const en_links = ['/en/home', '/en/work', '/en/about', '/en/skills', '/en/education', '/en/clubs', '/en/leisure', '/'];
+const fr_links = ['/fr/accueil', '/fr/travail', '/fr/a-propos', '/fr/competences', '/fr/scolarite', '/fr/clubs', '/fr/loisirs','/'];
+//TODO: ensure URL change from /fr/ to /en/ upon click on language selector
 
 
 
@@ -52,94 +106,127 @@ class App extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      frIsSelected: true,
-      enIsSelected: false,
+      FR: true,
+      EN: false,
       linksTable: fr_links,
+      //lang: 'FR',
     }
     this.selectFR = this.selectFR.bind(this);
     this.selectEN = this.selectEN.bind(this);
   }
 
   selectFR () {
-    if (!this.state.frIsSelected){
+    if (!this.state.FR){
       this.setState({
-      frIsSelected: true,
-      enIsSelected: false,
+      FR: true,
+      EN: false,
       linksTable: fr_links,
+      //lang: 'FR',
       }, function (){
-        console.log(this.state.frIsSelected);
-        console.log(this.state.enIsSelected);
+        console.log(this.state.FR);
+        console.log(this.state.EN);
       });
     } else {
-      console.log(this.state.frIsSelected);
-      console.log(this.state.enIsSelected);
+      console.log(this.state.FR);
+      console.log(this.state.EN);
     }
   }
 
   selectEN () {
-    if (!this.state.enIsSelected){
+    if (!this.state.EN){
       this.setState({
-      frIsSelected: false,
-      enIsSelected: true,
+      FR: false,
+      EN: true,
       linksTable: en_links,
+      //lang: 'EN',
       }, function (){
-        console.log(this.state.frIsSelected);
-        console.log(this.state.enIsSelected);
+        console.log(this.state.FR);
+        console.log(this.state.EN);
       });
     } else {
-      console.log(this.state.lang1IsSelected);
-      console.log(this.state.lang2IsSelected);
+      console.log(this.state.FR);
+      console.log(this.state.EN);
     }
   }
 
   render(){
-    const {location}= this.props;
+    const {location} = this.props;
+    const currentPath = this.props.location.pathname;
+    const i = this.state.linksTable.indexOf(currentPath);
     const timeout = {enter: 1000, exit: 1000};
+    const lang = this.state.FR ? 'FR' : 'EN';
+    const links = this.state.linksTable;
+    const homeLink = links[0];
+    const workLink = links[1];
+    const aboutLink = links[2];
+    const skillsLink = links[3];
+    const eduLink = links[4];
+    const clubsLink = links[5];
+    const leisureLink = links[6];
+    const defaultLink = links[7];
+    //const noAnim = !(currentPath==links[0] || currentPath==links[6] || currentPath==links[7]);
     return(
       <div>
-        <LeftNavigation/>
+        <HeaderContainer>
+          <Header link_home={homeLink}/>
+          <LanguageSwitcherWrapper_Header>
+            <LanguageItem selected={this.state.FR} onClick={this.selectFR} to={fr_links[i]}>
+              FR
+            </LanguageItem>
+            <div>|</div>
+            <LanguageItem selected={this.state.EN} onClick={this.selectEN} to={en_links[i]}>
+              EN
+            </LanguageItem>
+          </LanguageSwitcherWrapper_Header>
+        </HeaderContainer>
+        <Body>
+        <LeftNavigation
+          copyLang={lang}
+          link_one={aboutLink} 
+          link_two={skillsLink} 
+          link_three={clubsLink}/>
         <Wrapper>
           <TransitionGroup component={null}>
             <CSSTransition key={location.key} timeout={timeout} classNames="slideDown">
               <Switch location={location}> /*location prop necessary to keep rendering old component after route has changed*/
-                <Route exact path="/" component={HomeTile6} />
-                <Route path="/home" component={HomeTile6} />
-                <Route path="/work" component={WorkTile6} />
-                <Route path="/about" component={AboutTile6} />
-                <Route path="/skills" component={SkillsTile6} />
-                <Route path="/education" component={EducationTile6} />
-                <Route path="/organizations" component={OrganizationsTile6} />
-                <Route path="/leisure" component={LeisureTile6} />
+                <Route exact path={defaultLink} render={(props) => <HomeTile6 {...props} copyLang={lang} target={leisureLink} />} />
+                <Route path={homeLink} render={(props) => <HomeTile6 {...props} copyLang={lang} target={leisureLink} />} />
+                <Route path={workLink} render={(props) => <WorkTile6 {...props} copyLang={lang} />} />
+                <Route path={aboutLink} render={(props) => <AboutTile6 {...props} copyLang={lang} />} />
+                <Route path={skillsLink} render={(props) => <SkillsTile6 {...props} copyLang={lang} />} />
+                <Route path={eduLink} render={(props) => <EducationTile6 {...props} copyLang={lang} />} />
+                <Route path={clubsLink} render={(props) => <OrganizationsTile6 {...props} copyLang={lang} />} />
+                <Route path={leisureLink} render={(props) => <LeisureTile6 {...props} copyLang={lang} />} />
                 <Route render={() => <div>Not Found</div>} />
               </Switch>
             </CSSTransition>
           </TransitionGroup>
           <TransitionGroup component={null}>
-              <CSSTransition key={location.key} timeout={timeout} classNames="slideDown">
-                <Switch location={location}>
-                  <Route exact path="/" component={HomeTile5} />
-                  <Route path="/home" component={HomeTile5} />
-                  <Route path="/work" component={WorkTile5} />
-                  <Route path="/about" component={AboutTile5} />
-                  <Route path="/skills" component={SkillsTile5} />
-                  <Route path="/education" component={EducationTile5} />
-                  <Route path="/organizations" component={OrganizationsTile5} />
-                  <Route path="/leisure" component={LeisureTile5} />
-                  <Route render={() => <div>Not Found</div>} />
-                </Switch>
-              </CSSTransition>
+            <CSSTransition key={location.key} timeout={timeout} classNames="slideDown">
+              <Switch location={location}>
+                <Route exact path={defaultLink} render={(props) => <HomeTile5 {...props} copyLang={lang} target={clubsLink} />} />
+                <Route path={homeLink} render={(props) => <HomeTile5 {...props} copyLang={lang} target={clubsLink} />} />
+                <Route path={workLink} render={(props) => <WorkTile5 {...props} copyLang={lang} />} />
+                <Route path={aboutLink} render={(props) => <AboutTile5 {...props} copyLang={lang} />} />
+                <Route path={skillsLink} render={(props) => <SkillsTile5 {...props} copyLang={lang} />} />
+                <Route path={eduLink} render={(props) => <EducationTile5 {...props} copyLang={lang} />} />
+                <Route path={clubsLink} render={(props) => <OrganizationsTile5 {...props} copyLang={lang} />} />
+                <Route path={leisureLink} render={(props) => <LeisureTile5 {...props} copyLang={lang} />} />                  
+                <Route render={() => <div>Not Found</div>} />
+              </Switch>
+            </CSSTransition>
             </TransitionGroup>
           <TransitionGroup component={null}>
             <CSSTransition key={location.key} timeout={timeout} classNames="slideRight">
               <Switch location={location}>
-                <Route exact path="/" component={HomeTile4} />
-                <Route path="/home" component={HomeTile4} />
-                <Route path="/work" component={WorkTile4} />
-                <Route path="/about" component={AboutTile4} />
-                <Route path="/skills" component={SkillsTile4} />
-                <Route path="/education" component={EducationTile4} />
-                <Route path="/organizations" component={OrganizationsTile4} />
-                <Route path="/leisure" component={LeisureTile4} />
+                <Route exact path={defaultLink} render={(props) => <HomeTile4 {...props} copyLang={lang} target={eduLink} />} />
+                <Route path={homeLink} render={(props) => <HomeTile4 {...props} copyLang={lang} target={eduLink} />} />
+                <Route path={workLink} render={(props) => <WorkTile4 {...props} copyLang={lang} />} />
+                <Route path={aboutLink} render={(props) => <AboutTile4 {...props} copyLang={lang} />} />
+                <Route path={skillsLink} render={(props) => <SkillsTile4 {...props} copyLang={lang} />} />
+                <Route path={eduLink} render={(props) => <EducationTile4 {...props} copyLang={lang} />} />
+                <Route path={clubsLink} render={(props) => <OrganizationsTile4 {...props} copyLang={lang} />} />
+                <Route path={leisureLink} render={(props) => <LeisureTile4 {...props} copyLang={lang} />} />  
                 <Route render={() => <div>Not Found</div>} />
               </Switch>
             </CSSTransition>
@@ -147,14 +234,14 @@ class App extends React.Component{
           <TransitionGroup component={null}>
             <CSSTransition key={location.key} timeout={timeout} classNames="slideLeft">
               <Switch location={location}>
-                <Route exact path="/" component={HomeTile3} />
-                <Route path="/home" component={HomeTile3} />
-                <Route path="/work" component={WorkTile3} />
-                <Route path="/about" component={AboutTile3} />
-                <Route path="/skills" component={SkillsTile3} />
-                <Route path="/education" component={EducationTile3} />
-                <Route path="/organizations" component={OrganizationsTile3} />
-                <Route path="/leisure" component={LeisureTile3} />
+                <Route exact path={defaultLink} render={(props) => <HomeTile3 {...props} copyLang={lang} target={skillsLink} />} />
+                <Route path={homeLink} render={(props) => <HomeTile3 {...props} copyLang={lang} target={skillsLink} />} />
+                <Route path={workLink} render={(props) => <WorkTile3 {...props} copyLang={lang} />} />
+                <Route path={aboutLink} render={(props) => <AboutTile3 {...props} copyLang={lang} />} />
+                <Route path={skillsLink} render={(props) => <SkillsTile3 {...props} copyLang={lang} />} />
+                <Route path={eduLink} render={(props) => <EducationTile3 {...props} copyLang={lang} />} />
+                <Route path={clubsLink} render={(props) => <OrganizationsTile3 {...props} copyLang={lang} />} />
+                <Route path={leisureLink} render={(props) => <LeisureTile3 {...props} copyLang={lang} />} />  
                 <Route render={() => <div>Not Found</div>} />
               </Switch>
             </CSSTransition>
@@ -162,14 +249,14 @@ class App extends React.Component{
           <TransitionGroup component={null}>
             <CSSTransition key={location.key} timeout={timeout} classNames="slideLeft">
               <Switch location={location}>
-                <Route exact path="/" component={HomeTile2} />
-                <Route path="/home" component={HomeTile2} />
-                <Route path="/work" component={WorkTile2} />
-                <Route path="/about" component={AboutTile2} />
-                <Route path="/skills" component={SkillsTile2} />
-                <Route path="/education" component={EducationTile2} />
-                <Route path="/organizations" component={OrganizationsTile2} />
-                <Route path="/leisure" component={LeisureTile2} />
+                <Route exact path={defaultLink} render={(props) => <HomeTile2 {...props} copyLang={lang} target={aboutLink} />} />
+                <Route path={homeLink} render={(props) => <HomeTile2 {...props} copyLang={lang} target={aboutLink} />} />
+                <Route path={workLink} render={(props) => <WorkTile2 {...props} copyLang={lang} />} />
+                <Route path={aboutLink} render={(props) => <AboutTile2 {...props} copyLang={lang} />} />
+                <Route path={skillsLink} render={(props) => <SkillsTile2 {...props} copyLang={lang} />} />
+                <Route path={eduLink} render={(props) => <EducationTile2 {...props} copyLang={lang} />} />
+                <Route path={clubsLink} render={(props) => <OrganizationsTile2 {...props} copyLang={lang} />} />
+                <Route path={leisureLink} render={(props) => <LeisureTile2 {...props} copyLang={lang} />} />  
                 <Route render={() => <div>Not Found</div>} />
               </Switch>
             </CSSTransition>
@@ -177,35 +264,33 @@ class App extends React.Component{
           <TransitionGroup component={null}>
             <CSSTransition key={location.key} timeout={timeout} classNames="slideUp">
               <Switch location={location}>
-                <Route exact path="/" component={HomeTile1} />
-                <Route path="/home" component={HomeTile1} />
-                <Route path="/work" component={WorkTile1} />
-                <Route path="/about" component={AboutTile1} />
-                <Route path="/skills" component={SkillsTile1} />
-                <Route path="/education" component={EducationTile1} />
-                <Route path="/organizations" component={OrganizationsTile1} />
-                <Route path="/leisure" component={LeisureTile1} />
+                <Route exact path={defaultLink} render={(props) => <HomeTile1 {...props} copyLang={lang} target={workLink} />} />
+                <Route path={homeLink} render={(props) => <HomeTile1 {...props} copyLang={lang} target={workLink} />} />
+                <Route path={workLink} render={(props) => <WorkTile1 {...props} copyLang={lang} />} />
+                <Route path={aboutLink} render={(props) => <AboutTile1 {...props} copyLang={lang} />} />
+                <Route path={skillsLink} render={(props) => <SkillsTile1 {...props} copyLang={lang} />} />
+                <Route path={eduLink} render={(props) => <EducationTile1 {...props} copyLang={lang} />} />
+                <Route path={clubsLink} render={(props) => <OrganizationsTile1 {...props} copyLang={lang} />} />
+                <Route path={leisureLink} render={(props) => <LeisureTile1 {...props} copyLang={lang} />} />  
                 <Route render={() => <div>Not Found</div>} />
               </Switch>
             </CSSTransition>
           </TransitionGroup>
         </Wrapper>
         <RightBarContainer>
-          <LanguageSwitcherWrapper>
-            <LanguageItem selected={this.state.frIsSelected} onClick={this.selectFR}>
-              FR
-            </LanguageItem>
-            <div>|</div>
-            <LanguageItem selected={this.state.enIsSelected} onClick={this.selectEN}>
-              EN
-            </LanguageItem>
-          </LanguageSwitcherWrapper>
-          <RightNavigation 
-            toWork={this.state.linksTable[1]} 
-            toEducation={this.state.linksTable[4]} 
-            toLeisure={this.state.linksTable[6]}/>
+          <RightNavigation
+            copyLang={lang} 
+            link_one={workLink} 
+            link_two={eduLink} 
+            link_three={leisureLink}/>
         </RightBarContainer>
-      </div>
+      </Body>
+      <div class="scrollArrow"/>
+      <FooterContainer>
+        <div>Mentions légales</div>
+        <div>Contact</div>
+      </FooterContainer>
+    </div>
     )
   }
 };

@@ -1,18 +1,27 @@
-//EN COPY FOR HOME PAGE
+//COPY FOR HOME PAGE
 
-/*import currentLang from '../components/LanguageSelector.jsx';
+//FR
+export const Title_1_FR = "Travail";
+export const Title_2_FR = "Enchantée !";
+export const Title_3_FR = "Compétences";
+export const Title_4_FR = "Parcours académique";
+export const Title_5_FR = "Clubs";
+export const Title_6_FR = "Mode avion...";
 
-export const Title_1 = (currentLang == 'EN') ? "Travail" : "Work";
-export const Title_2 = (currentLang == 'FR') ? "Travail" : "Work";
-export const Title_3 = (currentLang == 'FR') ? "Travail" : "Work";
-export const Title_4 = (currentLang == 'FR') ? "Travail" : "Work";
-export const Title_5 = (currentLang == 'FR') ? "Travail" : "Work";
-export const Title_6 = (currentLang == 'FR') ? "Travail" : "Work";
-*/
+//EN
+export const Title_1_EN = "Work";
+export const Title_2_EN = "Oh hi!";
+export const Title_3_EN = "Skills";
+export const Title_4_EN = "Education";
+export const Title_5_EN = "Clubs";
+export const Title_6_EN = "Offline mode...";
 
-export const Title_1 = "Work";
-export const Title_2 = "Oh hi!";
-export const Title_3 = "Skills";
-export const Title_4 = "Education";
-export const Title_5 = "Clubs";
-export const Title_6 = "And when offline...";
+//TODO: Convert copy into arrays
+/*export const Copy = [
+{
+	'page':'home',
+	'field':'Title_1',
+	'lang' : 'FR',
+	'text' : 'Travail'
+},
+];*/

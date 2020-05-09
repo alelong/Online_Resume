@@ -48,7 +48,7 @@ export default class Section_Text_Module extends Component {
     return (
         <Wrapper onClick={this.toggleHidden}>
           <Title hidden={this.state.TitleIsHidden}>
-            {this.props.title}
+            <div>{this.props.title}</div>
           </Title>
           <Details hidden={this.state.DetailsAreHidden}>
             {this.props.children}
