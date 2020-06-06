@@ -8,6 +8,7 @@ import Typing from 'react-typing-animation';
 //import {AboutTile1, AboutTile2, AboutTile3, AboutTile4, AboutTile5, AboutTile6} from './AboutTiles.jsx';
 
 export const sectionColor = '#111c2f';
+export const sectionColor_secondary = '#CFD5EE';
 
 // Copy
 import { 
@@ -36,30 +37,60 @@ import {
 const AboutTile1Container = styled(Tile1)`
   color: ${sectionColor};
   background-color: ${sectionColor};
+  padding-left: 7%;
+  div {
+    flex-direction: row !important;
+    justify-content: space-evenly !important;
+    align-items: center !important;
+    height: 18%;
+    width: 100%;
+  }
+  div > a {
+    border: none;
+    width: 20%;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
   `;
 
 const AboutTile2Container = styled(Tile2)`
-  color: ${sectionColor};
+  color: white;
+  background-color: ${sectionColor};
+  border-left: none !important;
+  padding-left: 3%;
 `;
 
 const AboutTile3Container = styled(Tile3)`
   color: ${sectionColor};
-  background-image: url(../img/About_Navigation.jpg);
-  background-attachment: fixed;
-  background-size: contain;
+  background-color: ${sectionColor};
+  //background-image: url(../img/About_Navigation.jpg);
+  //background-attachment: fixed;
+  //background-size: contain;
   `;
 
 const AboutTile4Container = styled(Tile4)`
   color: ${sectionColor};
+  background-color: ${sectionColor_secondary};
   `;
 
 const AboutTile5Container = styled(Tile5)`
   color: ${sectionColor};
+  background-color: ${sectionColor_secondary};
   `;
 
 const AboutTile6Container = styled(Tile6)`
   color: ${sectionColor};
+  background-color: ${sectionColor_secondary};
   `;
+
+/*const EmailLink = styled(Link)`
+  background-image: url(../img/Email.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-y: center;
+`;*/
 
 const TypedTile = ({text}) => (
     <Typing speed={50}>
@@ -77,16 +108,15 @@ export class AboutTile1 extends Component {
     let LinkedInLogo_alt = (lang == 'FR') ? LinkedInLogo_alt_FR : LinkedInLogo_alt_EN;
     let InstagramLogo_alt = (lang == 'FR') ? InstagramLogo_alt_FR : InstagramLogo_alt_EN;
     return (
-      <AboutTile1Container style={{flexDirection: 'row'}}>
-        <a href="mailto:agathelelong@orange.fr" target="_top">
-          <img src="../img/Email.png" alt={EmailIcon_alt} style={{width: '105px', paddingRight: '26px'}}/>
-        </a>
-        <a href="https://www.linkedin.com/in/agathelelong/" target="_blank">
-          <img src="../img/LinkedIn.png" alt={LinkedInLogo_alt} style={{width: '50px', paddingRight: '12px'}}/>
-        </a>
-        <a href="https://www.instagram.com/agathellg/" target="_blank">
-          <img src="../img/Instagram.png" alt={InstagramLogo_alt} style={{width: '92px'}}/>
-        </a>
+      <AboutTile1Container>
+        <div>
+          <a href="mailto:agathelelong@orange.fr" target="_top" 
+          style={{backgroundImage: 'url(../img/Email_white.png)'}} alt={EmailIcon_alt}/>
+          <a href="https://www.linkedin.com/in/agathelelong/" target="_blank" 
+          style={{backgroundImage: 'url(../img/LI-In-Bug.png)'}} alt={LinkedInLogo_alt}/>
+          <a href="https://www.instagram.com/agathellg/" target="_blank" 
+          style={{backgroundImage: 'url(../img/IG_Glyph_Fill.png)'}} alt={InstagramLogo_alt}/>
+        </div>
       </AboutTile1Container>
     )
   }
@@ -129,7 +159,7 @@ export class AboutTile4 extends Component {
     return (
       <AboutTile4Container>
         <Section_Text_Module title={Title_4}>
-          <p>{Paragraph_4}</p>
+        <Paragraph_4/>
         </Section_Text_Module>
       </AboutTile4Container>
     )
@@ -165,7 +195,7 @@ export class AboutTile6 extends Component {
     return (
       <AboutTile6Container>
         <Section_Text_Module title={Title_6}>
-          <p>{Paragraph_6}</p>
+        <Paragraph_6/>
         </Section_Text_Module>
       </AboutTile6Container>
     )

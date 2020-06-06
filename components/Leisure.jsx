@@ -4,13 +4,7 @@ import Section_Text_Module from './SectionTextModule.jsx';
 import {Wrapper, Tile1, Tile2, Tile3, Tile4, Tile5, Tile6} from './Skeleton.jsx';
 import styled from 'styled-components';
 import Typing from 'react-typing-animation';
-
-
-export const textColor = '#513E4D';
-export const sectionColor = '#513E4D';
-//export const sectionColor = '#cdb092';
-
-//EN Copy
+import { sectionColor as sectionColor_About } from './About.jsx';
 import { 
   Title_1, 
   Title_2, 
@@ -26,16 +20,21 @@ import {
   Paragraph_6,
 } from '../copy/Leisure_Copy.jsx';
 
+export const sectionColor = '#513E4D';
+export const sectionColor_secondary = '#FBF7F1';
+
 const LeisureTile1Container = styled(Tile1)`
-  color: ${sectionColor};
+  color: ${sectionColor_About};
+  background-color: ${sectionColor_secondary};
   `;
 
 const LeisureTile2Container = styled(Tile2)`
-  color: ${sectionColor};
+  color: ${sectionColor_About};
+  background-color: ${sectionColor_secondary};
   `;
 
 const LeisureTile3Container = styled(Tile3)`
-  color: ${sectionColor};
+  color: ${sectionColor_About};
   background-image: url(../img/sand.jpg);
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -43,21 +42,24 @@ const LeisureTile3Container = styled(Tile3)`
   `;
 
 const LeisureTile4Container = styled(Tile4)`
-  color: ${sectionColor};
+  color: ${sectionColor_About};
+  background-color: ${sectionColor_secondary};
   `;
 
 const LeisureTile5Container = styled(Tile5)`
-  color: ${sectionColor};
+  color: ${sectionColor_About};
+  background-color: ${sectionColor_secondary};
   `;
 
 const LeisureTile6Container = styled(Tile6)`
+  padding-left: 3%;
   background-image: url(../img/sand.jpg);
   background-attachment: fixed;
+  background-position-y: center;
   background-repeat: no-repeat;
   background-size: cover;
-  color: ${textColor};
-  //background-color: ${sectionColor};
-  border: none;
+  color: ${sectionColor_About};
+  border-right: none !important;
   `;
 
 const TypedTile = () => (

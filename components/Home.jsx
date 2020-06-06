@@ -4,20 +4,12 @@ import Section_Text_Module from './SectionTextModule.jsx';
 import {Wrapper, Tile1, Tile2, Tile3, Tile4, Tile5, Tile6, IDPhotoTile} from './Skeleton.jsx';
 import styled from 'styled-components';
 import Typing from 'react-typing-animation';
-
-//import statement to insert in App.jsx: import {HomeTile1, HomeTile2, HomeTile3, HomeTile4, HomeTile5, HomeTile6} from './HomeTiles.jsx';
-
-var leisureImg = require('../img/sand.jpg');
-var aboutImg = require('../img/Agathe_Lelong.jpg');
-var paddingLeftValue = '3%';
-
 import { sectionColor as sectionColor_About } from './About.jsx';
 import { sectionColor as sectionColor_Work } from './Work.jsx';
 import { sectionColor as sectionColor_Skills } from './Skills.jsx';
 import { sectionColor as sectionColor_Education } from './Education.jsx';
-import { sectionColor as sectionColor_Organizations } from './Organizations.jsx';
+import { sectionColor as sectionColor_Languages } from './Languages.jsx';
 import { sectionColor as sectionColor_Leisure } from './Leisure.jsx';
-
 import {
   Title_1_FR, Title_1_EN,
   Title_2_FR, Title_2_EN,
@@ -27,64 +19,67 @@ import {
   Title_6_FR, Title_6_EN,
 } from '../copy/Home_Copy.jsx';
 
+var leisureImg = require('../img/sand.jpg');
+var aboutImg = require('../img/Agathe_Lelong.jpg');
+var paddingLeftValue = '3%';
+
+
 const HomeTile1Container = Tile1.withComponent(Link).extend`
   background-color: ${sectionColor_Work};
-  border: none;
   color: white;
   padding-left: ${paddingLeftValue};
+  border-right: none !important;
+
   `;
 
 const HomeTile2Container = Tile2.withComponent(Link).extend`
   background-image: url(../img/DSCF7939_bis_copy.jpg);
-  //background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
-  //background-position-y: -80px;
+  background-position-x: center;
   color: ${sectionColor_About};
-  //color: white;
-  border: none;
   padding-left: ${paddingLeftValue};
+  border-left: none !important;
   @media only screen 
     and (min-device-width: 375px) 
     and (max-device-width: 667px) 
     and (-webkit-min-device-pixel-ratio: 2)
     and (orientation: portrait) {
-      background-size: cover;
+      background-position-y: 35%;
     }
   }
   `;
 
 const HomeTile3Container = Tile3.withComponent(Link).extend`
   background-color: ${sectionColor_Skills};
-  border: none;
   color: white;
   cursor: pointer;
   padding-left: ${paddingLeftValue};
+  border-left: none !important;
   `;
 
 const HomeTile4Container = Tile4.withComponent(Link).extend`
   background-color: ${sectionColor_Education};
-  border: none;
   color: white;
   padding-left: ${paddingLeftValue};
+  border-right: none !important;
   `;
 
 const HomeTile5Container = Tile5.withComponent(Link).extend`
-  background-color: ${sectionColor_Organizations};
-  border: none;
+  background-color: ${sectionColor_Languages};
   color: white;
   padding-left: ${paddingLeftValue};
+  border-left: none !important;
   `;
 
 const HomeTile6Container = Tile6.withComponent(Link).extend`
   background-image: url(../img/sand.jpg);
   background-attachment: fixed;
   background-repeat: no-repeat;
+  background-position-y: center;
   background-size: cover;
-  //background-color: white;
-  border: none;
   padding-left: ${paddingLeftValue};
-  //color: white;
+  border-right: none !important;
   `;
 
 const WorkTypedTile = ({text}) => (

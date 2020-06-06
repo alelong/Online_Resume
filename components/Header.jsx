@@ -3,45 +3,40 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { sectionColor as sectionColor_About } from './About.jsx';
 import { sectionColor as sectionColor_Work } from './Work.jsx';
-import {navBarWidth} from './LeftNavigation.jsx';
-
-/*const HeaderContainer = styled.div`
-  width: 100%;
-  height: 8%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  background-color: white ;
-  color: ${sectionColor_About} ;
-  font-family: "Courier New", serif;
-  font-size: 30px;
-  border-bottom: solid 2px;
-`;*/
+import { navBarWidth_desktop, navBarWidth_mobile } from './Skeleton.jsx';
+import MobileNavigation from './MobileNavigation.jsx';
 
 const HomepageLink = styled(Link)`
-  width: ${navBarWidth};
+  width: ${navBarWidth_desktop};
   height: 100%;
   background-image: url(../img/homepage_icon.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   justify-content: center;
+  :hover{
+    background-image: url(../img/homepage_icon_open_6.png);
+  }
+  @media only screen 
+    and (min-device-width: 375px) 
+    and (max-device-width: 667px) 
+    and (-webkit-min-device-pixel-ratio: 2)
+    and (orientation: portrait) {
+      display: none;
+  }
 `;
 
-/*const LangSelector = styled.div`
-  width: ${navBarWidth};
-  background-color: ${sectionColor_About} ;
-  color: white;
-  font-size: 15px;
-`;*/
+const NameLink = styled(Link)`
+  text-decoration: none;
+  color: inherit;
+`;
 
 export default class Header extends Component {
   render () {
     return (
       <React.Fragment>
         <HomepageLink to={this.props.link_home}/>
-        <div>Agathe Lelong</div>
+        <NameLink to={this.props.link_home}>Agathe Lelong</NameLink>
       </React.Fragment>
     )
   }
